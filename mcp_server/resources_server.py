@@ -7,9 +7,9 @@ from mcp.server.fastmcp import FastMCP
 RECEIPTS_DIR = "receipts"
 
 # Initialize FastMCP server
-# mcp = FastMCP("receipts")
+mcp = FastMCP("receipts")
 
-# @mcp.resource("receipts://receipt-001.pdf")
+@mcp.resource("receipts://receipt-001.pdf")
 def get_receipt() -> bytes:
     """
     TODO

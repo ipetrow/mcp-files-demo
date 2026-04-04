@@ -23,10 +23,13 @@ class ChatInterface:
                     break
                 
                 if (query.startswith('@')):
-                    resource = query[1:]
-                    print(f"Debug 2: ", resource)
-                    if resource == RESOURCE_DIR:
-                        response = await self.client.process(query=query, resource_uri=RESOURCE_URI)
+                    extracted_resource, extracted_query = query.split(":", 1)
+
+                    extracted_resource = extracted_resource.lstrip("@").strip()
+                    extracted_query = extracted_query.strip()
+
+                    if extracted_resource == RESOURCE_DIR:
+                        response = await self.client.process(query=extracted_query, resource_uri=RESOURCE_URI)
                     else:
                         response = "Invalid input!"
                 else:

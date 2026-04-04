@@ -40,7 +40,7 @@ In this example, OpenAI `gpt-5-mini` model is used from Azure - The GPT model wa
 5. Double check the OpenAI API key is added in the environment variables. The name of the variable is `OPENAI_API_KEY` and retrieved in `mcp_client/llm/openai_service.py`.
 
 ## Execution
-Start the MCP Client and connect to the MCP Server by: `uv run python -m mcp_client ./mcp_server/resources_server.py`
+Start the MCP Client and connect to the MCP Server by: `uv run python -m mcp_client --server ./mcp_server/resources_server.py`
 
 ## Prompt Examples
 The prompts should follow a strict format: `@receipts: <query>`:

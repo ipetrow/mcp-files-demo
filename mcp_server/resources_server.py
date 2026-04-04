@@ -17,10 +17,8 @@ def get_receipt() -> str:
     """
 
     file_path = os.path.join(RECEIPTS_DIR, RECEIPTS_FILE)
-    print(f"DEBUG, get_receipt: {file_path}")
     if os.path.isfile(file_path):
         try:
-            print(f"Opening file: {file_path}")
             with open(file_path, "rb") as pdf_file:
                 data = pdf_file.read()
                 encoded_file = base64.b64encode(data).decode("utf-8")

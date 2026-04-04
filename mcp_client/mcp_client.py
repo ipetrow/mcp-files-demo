@@ -69,7 +69,7 @@ class MCPClient:
         resource_base64 = await self.get_resource(resource_uri)
         return await self.model_service.process(
             query=query, 
-            file_base64=resource_base64, 
+            resource_base64=resource_base64, 
             resource_name=resource_name
         )
 
